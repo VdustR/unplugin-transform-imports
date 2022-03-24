@@ -6,10 +6,10 @@
     "unplugin",
     "import",
     "transform",
-    "unplugin",
     "webpack",
     "rollup",
     "vite",
+    "esbuild",
     "tree-shaking",
     "lodash",
     "icon"
