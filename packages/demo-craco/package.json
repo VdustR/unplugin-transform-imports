@@ -1,5 +1,28 @@
 {
   "private": true,
+  "scripts": {
+    "build": "craco build",
+    "start": "craco start",
+    "test": "craco test"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@emotion/react": "^11.8.2",
@@ -22,28 +45,5 @@
     "react-scripts": "5.0.0",
     "typescript": "^4.6.2",
     "unplugin-transform-imports": "link:../../dist/core"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }

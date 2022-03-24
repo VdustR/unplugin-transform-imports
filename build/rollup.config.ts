@@ -4,7 +4,6 @@ import type { RollupOptions } from "rollup";
 import typescript from "rollup-plugin-typescript2";
 import packageJson from "../package.json";
 import { MODULE, PKG } from "./type";
-import fs from "fs-extra";
 import builtinModules from "builtin-modules";
 
 const repoRoot = resolve(__dirname, "..");
@@ -14,9 +13,6 @@ function genConfig(pkg: PKG, module: MODULE) {
   const isTyped = isEsm;
   const isTs = true;
   const pkgDir = resolve(repoRoot, "packages", pkg);
-  const pkgPackageJson = JSON.parse(
-    fs.readFileSync(resolve(pkgDir, "package.json"), "utf8")
-  );
   const distDir = resolve(repoRoot, "dist", pkg);
   const config: RollupOptions = {
     input: resolve(pkgDir, "index.ts"),
@@ -27,10 +23,7 @@ function genConfig(pkg: PKG, module: MODULE) {
       exports: "auto",
     },
     external: [
-      ...Object.keys(pkgPackageJson.dependencies),
-      ...Object.keys(packageJson.devDependencies).filter(
-        (pkg) => "tslib" !== pkg
-      ),
+      ...Object.keys(packageJson.dependencies).filter((pkg) => "tslib" !== pkg),
       ...builtinModules,
     ],
     plugins: [

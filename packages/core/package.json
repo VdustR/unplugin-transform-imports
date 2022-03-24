@@ -22,7 +22,6 @@
     "type": "git",
     "url": "https://github.com/VdustR/unplugin-transform-imports.git"
   },
-  "main": "index.ts",
   "license": "MIT",
   "author": {
     "name": "VdustR",
@@ -30,8 +29,5 @@
     "url": "https://vdustr.dev"
   },
   "type": "module",
-  "dependencies": {
-    "minimatch": "^5.0.1",
-    "unplugin": "^0.6.0"
-  }
+  "main": "index.ts"
 }

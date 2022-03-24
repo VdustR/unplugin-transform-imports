@@ -122,6 +122,22 @@ const defaultOptions = {
 
 TODO: TBD
 
+## Development
+
+```sh
+# init
+pnpm i
+
+# build
+pnpm build
+
+# install again to link production
+pnpm i
+
+## go to the demo
+cd packages/demo-{theDemoPath}
+```
+
 ## LICENSE
 
 [MIT](https://github.com/VdustR/unplugin-transform-imports/blob/main/LICENSE)
