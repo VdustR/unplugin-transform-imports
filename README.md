@@ -52,11 +52,11 @@ You can also use it as tree-shaking alternative for modules which is not using E
 [`demo-craco`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-craco):
 
 ```bash
-// without unplugin-transform-imports
+# without unplugin-transform-imports
 $ du -h --max-depth=0 build
 1.7M    build
 
-// with unplugin-transform-imports
+# with unplugin-transform-imports
 $ du -h --max-depth=0 build
 1012K   build
 ```
@@ -64,11 +64,11 @@ $ du -h --max-depth=0 build
 [`demo-vite`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite):
 
 ```bash
-// without unplugin-transform-imports
+# without unplugin-transform-imports
 du -h --max-depth=0 dist
 280K    dist
 
-// with unplugin-transform-imports
+# with unplugin-transform-imports
 du -h --max-depth=0 dist
 220K    dist
 ```
