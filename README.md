@@ -54,11 +54,11 @@ You can also use it as tree-shaking alternative for modules which is not using E
 ```bash
 # without unplugin-transform-imports
 $ du -h --max-depth=0 build
-1.7M    build
+1.6M    build
 
 # with unplugin-transform-imports
 $ du -h --max-depth=0 build
-1012K   build
+980K   build
 ```
 
 [`demo-vite`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite):
