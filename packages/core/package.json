@@ -1,0 +1,37 @@
+{
+  "name": "unplugin-transform-imports",
+  "private": true,
+  "description": "A imports transformer unplugin.",
+  "keywords": [
+    "unplugin",
+    "import",
+    "transform",
+    "unplugin",
+    "webpack",
+    "rollup",
+    "vite",
+    "tree-shaking",
+    "lodash",
+    "icon"
+  ],
+  "homepage": "https://github.com/VdustR/unplugin-transform-imports",
+  "bugs": {
+    "url": "https://github.com/VdustR/unplugin-transform-imports/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VdustR/unplugin-transform-imports.git"
+  },
+  "main": "index.ts",
+  "license": "MIT",
+  "author": {
+    "name": "VdustR",
+    "email": "vdustr@gmail.com",
+    "url": "https://vdustr.dev"
+  },
+  "type": "module",
+  "dependencies": {
+    "minimatch": "^5.0.1",
+    "unplugin": "^0.6.0"
+  }
+}

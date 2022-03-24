@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "dist"],
+  "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
+  "include": ["packages/**/*.ts", "build/**/*.ts"]
+}

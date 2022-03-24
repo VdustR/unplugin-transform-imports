@@ -1,0 +1,20 @@
+{
+  "extends": "@tsconfig/node16-strictest-esm",
+  "compilerOptions": {
+    "module": "ES2015",
+    "declaration": true,
+    "target": "ES5",
+    "moduleResolution": "node",
+    "preserveSymlinks": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "plugins": [
+      {
+        "name": "typescript-svelte-plugin"
+      }
+    ]
+  },
+  "include": []
+}
