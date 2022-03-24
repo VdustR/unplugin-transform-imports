@@ -103,7 +103,7 @@ transformImports.esbuild(transformImportsOptions);
 
 You can check the demo for `craco` and `vite`:
 
-- [`craco-demo`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-craco)
+- [`demo-craco`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-craco)
 - [`demo-vite`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite)
 
 ### transformImportsOptions
