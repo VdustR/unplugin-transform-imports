@@ -1,6 +1,7 @@
 import { createUnplugin } from "unplugin";
 import { resolve } from "path";
 import * as minimatch from "minimatch";
+import type { TransformImportsOptions } from "./type";
 
 const defaultEnforce = "pre";
 const defaultCwd = process.cwd();
@@ -10,18 +11,9 @@ const transformImports = createUnplugin(
     enforce,
     cwd = defaultCwd,
     modules = [],
-    includes = ["**/*.{tsx,ts,jsx,js,vue,svelte,mjs}"],
+    includes = ["**/*.{tsx,ts,jsx,js,vue,svelte,mjs,md,mdx,svx}"],
     excludes = ["node_modules"],
-  }: {
-    enforce?: "post" | "pre" | null;
-    cwd?: string;
-    modules?: {
-      path: string;
-      transform?: string | ((importName: string) => string);
-    }[];
-    includes?: string[];
-    excludes?: string[];
-  } = {}) => {
+  }: TransformImportsOptions = {}) => {
     const includesPatterns = includes.map((pattern) =>
       minimatch.makeRe(resolve(cwd, pattern))
     );

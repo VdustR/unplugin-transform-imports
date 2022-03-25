@@ -1,0 +1,64 @@
+// Vitest Snapshot v1
+
+exports[`Normal transform. > No transform 1`] = `
+"import MdiCheck from \\"mdi-material-ui/Check\\";
+import MuiCheck from \\"@mui/icons-material/Check\\";
+import CheckBox from \\"@mui/icons-material/CheckBox\\";
+import PhCheck from \\"phosphor-react/src/icons/Check\\";
+import merge from \\"lodash/merge\\";
+import lodash from \\"lodash\\";
+import { useCallback, useMemo } from \\"react\\";
+console.log({
+  MdiCheck,
+  MuiCheck,
+  CheckBox,
+  PhCheck,
+  merge,
+  lodash,
+  useCallback,
+  useMemo
+});
+"
+`;
+
+exports[`Test build > Test build 1`] = `
+"import MdiCheck from \\"mdi-material-ui/Check\\";
+import MuiCheck from \\"@mui/icons-material/Check\\";
+import CheckBox from \\"@mui/icons-material/CheckBox\\";
+import PhCheck from \\"phosphor-react/src/icons/Check\\";
+import merge from \\"lodash/merge\\";
+import lodash from \\"lodash\\";
+import { useCallback, useMemo } from \\"react\\";
+console.log({
+  MdiCheck,
+  MuiCheck,
+  CheckBox,
+  PhCheck,
+  merge,
+  lodash,
+  useCallback,
+  useMemo
+});
+"
+`;
+
+exports[`Test build 1`] = `
+"import MdiCheck from \\"mdi-material-ui/Check\\";
+import MuiCheck from \\"@mui/icons-material/Check\\";
+import CheckBox from \\"@mui/icons-material/CheckBox\\";
+import PhCheck from \\"phosphor-react/src/icons/Check\\";
+import merge from \\"lodash/merge\\";
+import lodash from \\"lodash\\";
+import { useCallback, useMemo } from \\"react\\";
+console.log({
+  MdiCheck,
+  MuiCheck,
+  CheckBox,
+  PhCheck,
+  merge,
+  lodash,
+  useCallback,
+  useMemo
+});
+"
+`;
