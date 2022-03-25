@@ -3,7 +3,9 @@ export type Cwd = string;
 export type Transform = string | ((importName: string) => string);
 export type Module = {
   path: string;
-  transform?: string | ((importName: string) => string);
+  transform?:
+    | string
+    | ((importName: string, moduleName: string, constName: string) => string);
 };
 export type Include = string;
 export type Exclude = string;

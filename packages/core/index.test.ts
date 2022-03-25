@@ -11,17 +11,32 @@ it("Test build", async () => {
     plugins: [
       transformImports.vite({
         modules: [
-          { path: "lodash" },
+          { path: "foo" },
           {
-            path: "@mui/icons-material",
-            transform: "@mui/icons-material/$1",
+            path: "@bar/core",
+            transform: "@bar/core/${importName}",
           },
           {
-            path: "phosphor-react",
-            transform: (importName) => `phosphor-react/src/icons/${importName}`,
+            path: "baz",
+            transform: `\${moduleName}/\${importName}/\${importName}/deep/\${constName}/\${constName}`,
           },
           {
-            path: "mdi-material-ui",
+            path: "@qux/core",
+            transform: "@qux/core/${constName}",
+          },
+          {
+            path: "quux",
+            transform: (importName) => `quux/dist/${importName}`,
+          },
+          {
+            path: "@corge/react",
+            transform: (importName, moduleName, constName) =>
+              `${moduleName}/dist/${importName}/${importName}/deep/${constName}/${constName}`,
+          },
+          {
+            path: "grault-vue",
+            transform: (_importName, _moduleName, constName) =>
+              `grault-vue/dist/${constName}`,
           },
         ],
       }),
@@ -31,11 +46,13 @@ it("Test build", async () => {
       polyfillModulePreload: false,
       rollupOptions: {
         external: [
-          /^lodash(\/.+)?/,
-          /^@mui\/icons-material(\/.+)?/,
-          /^phosphor-react(\/.+)?/,
-          /^mdi-material-ui(\/.+)?/,
-          /^react(\/.+)?/,
+          /^foo(\/.+)?/,
+          /^@bar\/core(\/.+)?/,
+          /^baz(\/.+)?/,
+          /^@qux\/core(\/.+)?/,
+          /^quux(\/.+)?/,
+          /^@corge\/react(\/.+)?/,
+          /^grault-vue(\/.+)?/,
         ],
       },
     },

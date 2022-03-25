@@ -1,6 +1,6 @@
 # `unplugin-transform-imports`
 
-A imports transformer unplugin inspired by [babel-plugin-transform-imports](https://www.npmjs.com/package/babel-plugin-transform-imports).
+A imports transformer unplugin inspired by [`babel-plugin-transform-imports`](https://www.npmjs.com/package/babel-plugin-transform-imports).
 
 ## What `unplugin-transform-imports` Do?
 
@@ -38,11 +38,11 @@ There are rough test results with [`demo-craco`](https://github.com/VdustR/unplu
 ```bash
 # without unplugin-transform-imports
 $ pnpm start
-webpack 5.70.0 compiled successfully in 22744 ms
+webpack 5.70.0 compiled successfully in 22427 ms
 
 # with unplugin-transform-imports
 $ pnpm start
-webpack 5.70.0 compiled successfully in 3417 ms
+webpack 5.70.0 compiled successfully in 3446 ms
 ```
 
 ### Tree-shaking Alternative
@@ -112,7 +112,7 @@ You can check the demo for `craco` and `vite`:
 const defaultOptions = {
   enforce = "pre", // "pre" | "post" | null
   cwd = defaultCwd, // default: process.cwd()
-  modules = [],
+  modules = [], // See Module
   includes = ["**/*.{tsx,ts,jsx,js,vue,svelte,mjs}"],
   excludes = ["node_modules"],
 };
@@ -120,7 +120,57 @@ const defaultOptions = {
 
 #### Module
 
-TODO: TBD
+```ts
+const module = {
+  path: "lodash", // the module name to replace
+};
+
+// This will make:
+import { merge } from "lodash";
+
+// be transformed to:
+import merge from "lodash/merge";
+
+// You can get the same results with these transform options:
+const module = {
+  path: "lodash",
+  transform: `\${moduleName}/\${importName}`,
+};
+const module = {
+  path: "lodash",
+  transform: (importName, moduleName) => `${moduleName}/${importName}`,
+};
+```
+
+There are three variables for the transform function and the transform template. They are `importName`, `moduleName` and `constName`. It's depends on the original code:
+
+```ts
+import { [importName] } from "[moduleName]"; // constName === importName
+import { [importName] as [constName] } from "[moduleName]";
+```
+
+You can use them in a transform template:
+
+```ts
+const module = {
+  path: "lodash",
+  transform: `\${moduleName}/\${importName}/\${constName}`,
+};
+```
+
+or in transform function:
+
+```ts
+const module = {
+  path: "lodash",
+  transform: (importName, moduleName, constName) =>
+    `${moduleName}/${importName}/${constName}`,
+};
+```
+
+## Issue
+
+🐛 `unplugin-transform-imports` use RegExp instead of Javascript parser to make it possible be used in every kinds of files directly even in `.mdx` or `svx`. A string might be replaced unexpectedly when it is not a real import script but matched the same pattern.
 
 ## Development
 
@@ -136,6 +186,12 @@ pnpm i
 
 ## go to the demo
 cd packages/demo-{theDemoPath}
+```
+
+## Test
+
+```sh
+pnpm test
 ```
 
 ## LICENSE

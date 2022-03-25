@@ -10,12 +10,12 @@ module.exports = {
               { path: "lodash" },
               {
                 path: "@mui/icons-material",
-                transform: "@mui/icons-material/$1",
+                transform: `\${moduleName}/\${importName}`,
               },
               {
                 path: "phosphor-react",
-                transform: (importName) =>
-                  `phosphor-react/dist/icons/${importName}.esm.js`,
+                transform: (importName, moduleName) =>
+                  `${moduleName}/dist/icons/${importName}.esm.js`,
               },
               {
                 path: "mdi-material-ui",

@@ -1,64 +1,49 @@
 // Vitest Snapshot v1
 
-exports[`Normal transform. > No transform 1`] = `
-"import MdiCheck from \\"mdi-material-ui/Check\\";
-import MuiCheck from \\"@mui/icons-material/Check\\";
-import CheckBox from \\"@mui/icons-material/CheckBox\\";
-import PhCheck from \\"phosphor-react/src/icons/Check\\";
-import merge from \\"lodash/merge\\";
-import lodash from \\"lodash\\";
-import { useCallback, useMemo } from \\"react\\";
-console.log({
-  MdiCheck,
-  MuiCheck,
-  CheckBox,
-  PhCheck,
-  merge,
-  lodash,
-  useCallback,
-  useMemo
-});
-"
-`;
-
-exports[`Test build > Test build 1`] = `
-"import MdiCheck from \\"mdi-material-ui/Check\\";
-import MuiCheck from \\"@mui/icons-material/Check\\";
-import CheckBox from \\"@mui/icons-material/CheckBox\\";
-import PhCheck from \\"phosphor-react/src/icons/Check\\";
-import merge from \\"lodash/merge\\";
-import lodash from \\"lodash\\";
-import { useCallback, useMemo } from \\"react\\";
-console.log({
-  MdiCheck,
-  MuiCheck,
-  CheckBox,
-  PhCheck,
-  merge,
-  lodash,
-  useCallback,
-  useMemo
-});
-"
-`;
-
 exports[`Test build 1`] = `
-"import MdiCheck from \\"mdi-material-ui/Check\\";
-import MuiCheck from \\"@mui/icons-material/Check\\";
-import CheckBox from \\"@mui/icons-material/CheckBox\\";
-import PhCheck from \\"phosphor-react/src/icons/Check\\";
-import merge from \\"lodash/merge\\";
-import lodash from \\"lodash\\";
-import { useCallback, useMemo } from \\"react\\";
+"import foo from \\"foo/foo\\";
+import foo1 from \\"foo/foo1Ex\\";
+import foo2 from \\"foo/foo2\\";
+import bar from \\"@bar/core/bar\\";
+import bar1 from \\"@bar/core/bar1Ex\\";
+import bar2 from \\"@bar/core/bar2\\";
+import baz from \\"baz/baz/baz/deep/baz/baz\\";
+import baz1 from \\"baz/baz1Ex/baz1Ex/deep/baz1/baz1\\";
+import baz2 from \\"baz/baz2/baz2/deep/baz2/baz2\\";
+import qux from \\"@qux/core/qux\\";
+import qux1 from \\"@qux/core/qux1\\";
+import qux2 from \\"@qux/core/qux2\\";
+import quux from \\"quux/dist/quux\\";
+import quux1 from \\"quux/dist/quux1Ex\\";
+import quux2 from \\"quux/dist/quux2\\";
+import corge from \\"@corge/react/dist/corge/corge/deep/corge/corge\\";
+import corge1 from \\"@corge/react/dist/corge1Ex/corge1Ex/deep/corge1/corge1\\";
+import corge2 from \\"@corge/react/dist/corge2/corge2/deep/corge2/corge2\\";
+import grault from \\"grault-vue/dist/grault\\";
+import grault1 from \\"grault-vue/dist/grault1\\";
+import grault2 from \\"grault-vue/dist/grault2\\";
 console.log({
-  MdiCheck,
-  MuiCheck,
-  CheckBox,
-  PhCheck,
-  merge,
-  lodash,
-  useCallback,
-  useMemo
+  foo,
+  foo1,
+  foo2,
+  bar,
+  bar1,
+  bar2,
+  baz,
+  baz1,
+  baz2,
+  qux,
+  qux1,
+  qux2,
+  quux,
+  quux1,
+  quux2,
+  corge,
+  corge1,
+  corge2,
+  grault,
+  grault1,
+  grault2
 });
 "
 `;

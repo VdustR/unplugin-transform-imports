@@ -42,20 +42,29 @@ const transformImports = createUnplugin(
             originalMatched,
             prefix: string,
             imports: string,
-            modulePathWithQuote: string
+            moduleNameWithQuote: string
           ) => {
-            const modulePath = modulePathWithQuote.slice(1, -1);
+            const moduleName = moduleNameWithQuote.slice(1, -1);
             const matchedTransform = modules.find(
-              ({ path }) => path === modulePath
+              ({ path }) => path === moduleName
             );
             if (!matchedTransform) return originalMatched;
-            const transformer: (importName: string) => string = (() => {
+            const transformer: (
+              importName: string,
+              moduleName: string,
+              constName?: string
+            ) => string = (() => {
               const transform = matchedTransform.transform;
               if (!transform)
-                return (importName) => `${modulePath}/${importName}`;
+                return (importName) => `${moduleName}/${importName}`;
               if (typeof transform === "string")
-                return (importName) => transform.replace("$1", importName);
-              return (importName) => transform(importName);
+                return (importName, moduleName, constName) =>
+                  transform
+                    .replaceAll("${importName}", importName)
+                    .replaceAll("${moduleName}", moduleName)
+                    .replaceAll("${constName}", constName || importName);
+              return (importName, moduleName, constName) =>
+                transform(importName, moduleName, constName || importName);
             })();
             const transformedImports =
               prefix +
@@ -66,7 +75,9 @@ const transformImports = createUnplugin(
                   if (!importName) return "";
                   const constName = _constName || importName;
                   return `import ${constName} from "${transformer(
-                    importName
+                    importName,
+                    moduleName,
+                    constName
                   )}";`;
                 })
                 .join("\n") +
