@@ -6,10 +6,11 @@ import type { TransformOptions } from "@babel/core";
 import type { Module } from "./type";
 import type {
   Identifier,
-  ImportSpecifier,
-  StringLiteral,
+  ImportDeclaration,
   ImportDefaultSpecifier,
   ImportNamespaceSpecifier,
+  ImportSpecifier,
+  StringLiteral,
 } from "@babel/types";
 
 function isIdentifier(node: Identifier | StringLiteral): node is Identifier {
@@ -75,7 +76,7 @@ export default async function importsTransform(
       if (importNamespaceSpecifiers.length) return;
       // import xxx from "xxx";
       if (importSpecifiers.length === 0) return;
-      const importDeclarations: t.ImportDeclaration[] = [];
+      const importDeclarations: ImportDeclaration[] = [];
       importDefaultSpecifiers.forEach((specifier) => {
         importDeclarations.push(
           t.importDeclaration([specifier], t.stringLiteral(moduleName))
