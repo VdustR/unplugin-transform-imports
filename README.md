@@ -112,7 +112,7 @@ You can check the demo for `craco` and `vite`:
 
 ```ts
 const defaultOptions = {
-  enforce = "pre", // "pre" | "post" | null
+  enforce = undefined, // "pre" | "post" | undefined
   cwd = defaultCwd, // default: process.cwd()
   modules = [], // See Module
   includes = ["**/*.{tsx,ts,jsx,js,mjs}"],

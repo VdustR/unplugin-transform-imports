@@ -5,7 +5,6 @@ import type { TransformImportsOptions } from "./type";
 import transformImport from "./transformImports";
 import type { SourceMap } from "rollup";
 
-const defaultEnforce = "pre";
 const defaultCwd = process.cwd();
 
 const transformImports = createUnplugin(
@@ -31,12 +30,7 @@ const transformImports = createUnplugin(
     return {
       name: "transform-import",
       modules,
-      enforce:
-        enforce === undefined
-          ? defaultEnforce
-          : enforce === null
-          ? undefined
-          : enforce,
+      enforce,
       transformInclude(id) {
         return (
           includesPatterns.some((pattern) => pattern.test(id)) &&

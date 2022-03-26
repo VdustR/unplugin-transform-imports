@@ -6,6 +6,7 @@ module.exports = {
       add: [
         [
           transformImports.webpack({
+            enforce: "pre",
             parseOptions: {
               plugins: ["typescript", "jsx"],
             },

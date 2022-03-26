@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [
     vue(),
     transformImports.vite({
-      enforce: null,
       includes: ["**/*.{ts,js,mjs,vue}"],
       modules: [
         { path: "lodash" },

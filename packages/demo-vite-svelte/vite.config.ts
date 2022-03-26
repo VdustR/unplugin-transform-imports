@@ -11,7 +11,6 @@ export default defineConfig({
   plugins: [
     svelte(),
     transformImports.vite({
-      enforce: null,
       includes: ["**/*.{ts,js,mjs,svelte}"],
       modules: [
         { path: "lodash" },
