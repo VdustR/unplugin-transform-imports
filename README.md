@@ -1,6 +1,6 @@
 # `unplugin-transform-imports`
 
-A imports transformer unplugin inspired by [`babel-plugin-transform-imports`](https://www.npmjs.com/package/babel-plugin-transform-imports).
+A imports transformer [unplugin](https://github.com/unjs/unplugin) based on [babel](https://github.com/babel/babel) inspired by [`babel-plugin-transform-imports`](https://www.npmjs.com/package/babel-plugin-transform-imports).
 
 ## What `unplugin-transform-imports` Do?
 
@@ -29,7 +29,7 @@ import merge from "lodash/merge";
 
 > Development bundles can contain the full library which can lead to slower startup times. This is especially noticeable if you import from @mui/icons-material. Startup times can be approximately 6x slower than without named imports from the top-level API.
 
-- Reference from [Minimizing bundle size](https://mui.com/guides/minimizing-bundle-size/) [# Development environment](https://mui.com/guides/minimizing-bundle-size/#development-environment)
+- Reference from [MUI Minimizing bundle size #Development environment](https://mui.com/guides/minimizing-bundle-size/#development-environment)
 
 You can save a lot of time if you use webpack.
 
@@ -42,7 +42,7 @@ webpack 5.70.0 compiled successfully in 22427 ms
 
 # with unplugin-transform-imports
 $ pnpm start
-webpack 5.70.0 compiled successfully in 3446 ms
+webpack 5.70.0 compiled successfully in 3313 ms
 ```
 
 ### Tree-shaking Alternative
@@ -113,33 +113,39 @@ const defaultOptions = {
   enforce = "pre", // "pre" | "post" | null
   cwd = defaultCwd, // default: process.cwd()
   modules = [], // See Module
-  includes = ["**/*.{tsx,ts,jsx,js,vue,svelte,mjs}"],
+  includes = ["**/*.{tsx,ts,jsx,js,mjs}"],
   excludes = ["node_modules"],
+  parseOptions, // Optional. See: https://babeljs.io/docs/en/babel-parser#options
+  transformOptions, // Optional. See: https://babeljs.io/docs/en/options
 };
 ```
 
 #### Module
 
 ```ts
-const module = {
-  path: "lodash", // the module name to replace
-};
+transformImports.vite({
+  modules: [
+    {
+      path: "lodash", // the module name to replace
+    },
+
+    // You can get the same results with these transform options:
+    {
+      path: "lodash", // the module name to replace
+      transform: `\${moduleName}/\${importName}`,
+    },
+    {
+      path: "lodash",
+      transform: (importName, moduleName) => `${moduleName}/${importName}`,
+    },
+  ],
+});
 
 // This will make:
 import { merge } from "lodash";
 
 // be transformed to:
 import merge from "lodash/merge";
-
-// You can get the same results with these transform options:
-const module = {
-  path: "lodash",
-  transform: `\${moduleName}/\${importName}`,
-};
-const module = {
-  path: "lodash",
-  transform: (importName, moduleName) => `${moduleName}/${importName}`,
-};
 ```
 
 There are three variables for the transform function and the transform template. They are `importName`, `moduleName` and `constName`. It's depends on the original code:
@@ -168,9 +174,22 @@ const module = {
 };
 ```
 
-## Issue
+### `transformImports()`
 
-🐛 `unplugin-transform-imports` use RegExp instead of Javascript parser to make it possible be used in every kinds of files directly even in `.mdx` or `svx`. A string might be replaced unexpectedly when it is not a real import script but matched the same pattern.
+You can use `transformImports()` function directly without unplugin:
+
+```ts
+import transformImports from `unplugin-transform-imports/transformImports`;
+
+const transformedCode:string = transformImports(
+  code,
+  {
+    modules, // See Module
+    parseOptions, // Optional. See: https://babeljs.io/docs/en/babel-parser#options
+    transformOptions, // Optional. See: https://babeljs.io/docs/en/options
+  }
+);
+```
 
 ## Development
 

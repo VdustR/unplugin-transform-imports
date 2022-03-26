@@ -37,6 +37,7 @@ function genConfig(pkg: PKG, module: MODULE) {
                 declarationDir: ".",
                 target: "ES5",
                 include: [resolve(pkgDir, `**/*.ts`)],
+                exclude: [resolve(pkgDir, `**/*.test.ts`)],
                 compilerOptions: {
                   declaration: isTyped,
                 },

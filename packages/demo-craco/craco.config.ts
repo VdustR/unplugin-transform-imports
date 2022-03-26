@@ -6,6 +6,9 @@ module.exports = {
       add: [
         [
           transformImports.webpack({
+            parseOptions: {
+              plugins: ["typescript", "jsx"],
+            },
             modules: [
               { path: "lodash" },
               {

@@ -4,10 +4,13 @@ importers:
 
   .:
     specifiers:
+      '@babel/core': ^7.17.8
       '@babel/parser': ^7.17.8
       '@babel/traverse': ^7.17.3
       '@rollup/plugin-typescript': ^8.3.1
       '@tsconfig/node16-strictest-esm': ^1.0.0
+      '@types/babel__core': ^7.1.19
+      '@types/babel__traverse': ^7.14.2
       '@types/fs-extra': ^9.0.13
       '@types/glob': ^7.2.0
       '@types/minimatch': ^3.0.5
@@ -29,10 +32,13 @@ importers:
       vite: ^2.8.6
       vitest: ^0.7.10
     dependencies:
+      '@babel/core': 7.17.8
       '@babel/parser': 7.17.8
       '@babel/traverse': 7.17.3
       '@rollup/plugin-typescript': 8.3.1_859e05ab655ea3c900a5f26a0311c0b5
       '@tsconfig/node16-strictest-esm': 1.0.0
+      '@types/babel__core': 7.1.19
+      '@types/babel__traverse': 7.14.2
       '@types/fs-extra': 9.0.13
       '@types/glob': 7.2.0
       '@types/minimatch': 3.0.5

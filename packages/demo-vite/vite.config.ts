@@ -6,6 +6,9 @@ import transformImports from "unplugin-transform-imports";
 export default defineConfig({
   plugins: [
     transformImports.vite({
+      parseOptions: {
+        plugins: ["typescript", "jsx"],
+      },
       modules: [
         { path: "lodash" },
         {

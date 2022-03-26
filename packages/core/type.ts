@@ -1,3 +1,6 @@
+import type { TransformOptions } from "@babel/core";
+import type { ParserOptions } from "@babel/parser";
+
 export type Enforce = "post" | "pre" | null;
 export type Cwd = string;
 export type Transform = string | ((importName: string) => string);
@@ -12,7 +15,9 @@ export type Exclude = string;
 export type TransformImportsOptions = {
   enforce?: Enforce;
   cwd?: Cwd;
-  modules?: Module[];
+  modules: Module[];
   includes?: Include[];
   excludes?: Exclude[];
+  parseOptions?: ParserOptions | undefined;
+  transformOptions?: TransformOptions | undefined;
 };
