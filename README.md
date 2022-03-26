@@ -2,7 +2,7 @@
 
 [![NPM Publish](https://github.com/VdustR/unplugin-transform-imports/actions/workflows/build.yml/badge.svg)](https://github.com/VdustR/unplugin-transform-imports/actions/workflows/build.yml)
 
-A imports transformer [unplugin](https://github.com/unjs/unplugin) based on [babel](https://github.com/babel/babel) inspired by [`babel-plugin-transform-imports`](https://www.npmjs.com/package/babel-plugin-transform-imports).
+An imports transform [unplugin](https://github.com/unjs/unplugin) based on [babel](https://github.com/babel/babel) inspired by [`babel-plugin-transform-imports`](https://www.npmjs.com/package/babel-plugin-transform-imports).
 
 ## What `unplugin-transform-imports` Do?
 

@@ -1,7 +1,7 @@
 {
   "name": "unplugin-transform-imports",
   "private": true,
-  "description": "A imports transformer unplugin.",
+  "description": "A imports transform unplugin.",
   "keywords": [
     "unplugin",
     "import",
