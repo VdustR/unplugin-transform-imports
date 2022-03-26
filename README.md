@@ -104,7 +104,9 @@ transformImports.esbuild(transformImportsOptions);
 You can check the demo for `craco` and `vite`:
 
 - [`demo-craco`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-craco)
-- [`demo-vite`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite)
+- [`demo-vite-react`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite)
+- [`demo-vite-vue`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite-vue)
+- [`demo-vite-svelte`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite-svelte)
 
 ### transformImportsOptions
 
