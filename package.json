@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/core": "^7.17.8",
     "@babel/parser": "^7.17.8",
-    "@babel/traverse": "^7.17.3",
+    "@babel/traverse": "^7.23.2",
     "@rollup/plugin-typescript": "^8.3.1",
     "@tsconfig/node16-strictest-esm": "^1.0.0",
     "@types/babel__core": "^7.1.19",
