@@ -7,6 +7,12 @@ import type { SourceMap } from "rollup";
 
 const defaultCwd = process.cwd();
 
+function compilePatterns(patterns: string[], cwd: string) {
+  return patterns
+    .map((pattern) => minimatch.makeRe(resolve(cwd, pattern)))
+    .filter((pattern): pattern is RegExp => pattern !== false);
+}
+
 const transformImports = createUnplugin(
   (
     {
@@ -21,12 +27,8 @@ const transformImports = createUnplugin(
       modules: [],
     }
   ) => {
-    const includesPatterns = includes.map((pattern) =>
-      minimatch.makeRe(resolve(cwd, pattern))
-    );
-    const excludesPatterns = excludes.map((pattern) =>
-      minimatch.makeRe(resolve(cwd, pattern))
-    );
+    const includesPatterns = compilePatterns(includes, cwd);
+    const excludesPatterns = compilePatterns(excludes, cwd);
     return {
       name: "transform-import",
       modules,

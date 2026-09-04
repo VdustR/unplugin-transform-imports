@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "moduleResolution": "Node",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true
   },
   "exclude": ["node_modules", "dist"],
-  "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
-  "include": ["packages/**/*.ts", "build/**/*.ts"]
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "include": ["packages/core/**/*.ts", "build/**/*.ts"]
 }

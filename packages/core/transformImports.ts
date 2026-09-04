@@ -1,6 +1,6 @@
-import parser from "@babel/parser";
+import * as parser from "@babel/parser";
 import type { ParserOptions } from "@babel/parser";
-import traverse from "@babel/traverse";
+import * as traverseModule from "@babel/traverse";
 import { transformFromAstAsync, types as t } from "@babel/core";
 import type { TransformOptions } from "@babel/core";
 import type { Module } from "./type";
@@ -12,6 +12,12 @@ import type {
   ImportSpecifier,
   StringLiteral,
 } from "@babel/types";
+
+const traverseExport = traverseModule.default as unknown;
+const traverse =
+  typeof traverseExport === "function"
+    ? (traverseExport as typeof traverseModule.default)
+    : (traverseExport as { default: typeof traverseModule.default }).default;
 
 function isIdentifier(node: Identifier | StringLiteral): node is Identifier {
   return node.type === "Identifier";

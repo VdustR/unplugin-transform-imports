@@ -105,6 +105,10 @@ transformImports.esbuild(transformImportsOptions);
 
 You can check the demo for `craco` and `vite`:
 
+The `demo-craco` directory is a historical example and is excluded from the
+active pnpm workspace because its Create React App dependency tree contains
+unresolved security advisories.
+
 - [`demo-craco`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-craco)
 - [`demo-vite-react`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite)
 - [`demo-vite-vue`](https://github.com/VdustR/unplugin-transform-imports/blob/main/packages/demo-vite-vue)

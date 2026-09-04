@@ -1,6 +1,6 @@
 import cac from "cac";
 import fs from "fs-extra";
-import glob from "glob";
+import { globSync } from "glob";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 
@@ -10,8 +10,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 cli
   .command("[version]", "Version number to inject into package.json")
   .action((version) => {
-    glob
-      .sync(resolve(__dirname, "../dist/*/package.json"))
+    globSync(resolve(__dirname, "../dist/*/package.json"))
       .forEach(async (file) => {
         const pkg = JSON.parse(await fs.readFile(file, "utf8"));
         pkg.version = version;

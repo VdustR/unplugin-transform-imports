@@ -1,2 +1,8 @@
 packages:
   - "packages/**"
+  # Keep the legacy Create React App example as historical documentation only.
+  - "!packages/demo-craco"
+autoInstallPeers: false
+allowBuilds:
+  esbuild: true
+  svelte-preprocess: true
