@@ -1,6 +1,9 @@
-name: NPM Publish
+name: CI and NPM Publish
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - experimental
@@ -13,9 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Cache pnpm modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-pnpm-modules
         with:
@@ -23,15 +26,15 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: "17"
-      - uses: pnpm/action-setup@v2
+          node-version: "22"
+      - uses: pnpm/action-setup@v4
         with:
-          version: 6
           run_install: true
       - id: get_version
-        uses: actions/github-script@v5
+        if: github.event_name == 'push'
+        uses: actions/github-script@v7
         with:
           script: |
             const sha = context.sha.substring(0, 7)
@@ -42,10 +45,14 @@ jobs:
             core.setOutput('tag', tag)
       - name: Build
         run: pnpm build
+      - name: Test
+        run: pnpm test --run
       - name: version
+        if: github.event_name == 'push'
         run: pnpm build:version -- ${{ steps.get_version.outputs.version }}
 
       - uses: JS-DevTools/npm-publish@v1
+        if: github.event_name == 'push'
         with:
           token: ${{ secrets.NPM_TOKEN }}
           tag: ${{ steps.get_version.outputs.tag }}

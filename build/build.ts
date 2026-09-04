@@ -1,15 +1,17 @@
 import fs from "fs-extra";
-import mkdirp from "mkdirp";
+import { mkdirp } from "mkdirp";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { PKG } from "./type";
-import babelParser from "@babel/parser";
+import * as babelParser from "@babel/parser";
 import traverse from "@babel/traverse";
 import builtinModules from "builtin-modules";
-import glob from "glob";
-import packageJson from "../package.json";
+import { globSync } from "glob";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const packageJson = JSON.parse(
+  fs.readFileSync(resolve(__dirname, "../package.json"), "utf8")
+);
 
 const packagesDir = resolve(__dirname, "../packages");
 
@@ -55,8 +57,6 @@ async function setPackage(packageName: PKG) {
   ]);
 }
 
-await Promise.all(Object.values(PKG).map((pkg) => setPackage(pkg)));
-
 function getModuleName(str: string) {
   const pathArr = str.split("/");
   if (str.match(/^@/)) return `${pathArr[0]}/${pathArr[1]}`;
@@ -73,7 +73,7 @@ function getVersion(moduleName: string) {
 }
 
 async function setDependencies(pkg: PKG) {
-  const files = glob.sync(resolve(targetDir, pkg, "**/*.js"));
+  const files = globSync(resolve(targetDir, pkg, "**/*.js"));
   const depsMap = new Map<string, string>();
   await Promise.all(
     files.map(async (file) => {
@@ -81,7 +81,7 @@ async function setDependencies(pkg: PKG) {
       const ast = babelParser.parse(jsCode, {
         sourceType: "module",
       });
-      (traverse as unknown as { default: typeof traverse }).default(ast, {
+      traverse(ast, {
         ImportDeclaration(path) {
           const value = path.node.source.value;
           if (value.match(/^\./)) return;
@@ -105,4 +105,12 @@ async function setDependencies(pkg: PKG) {
   });
 }
 
-await setDependencies(PKG.core);
+async function main() {
+  await Promise.all(Object.values(PKG).map((pkg) => setPackage(pkg)));
+  await setDependencies(PKG.core);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

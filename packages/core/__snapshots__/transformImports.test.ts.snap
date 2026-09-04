@@ -1,36 +1,33 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Test build 1`] = `
 "// @ts-ignore
-import foo from \\"foo/foo\\";
-import foo1 from \\"foo/foo1Ex\\";
-import foo2 from \\"foo/foo2\\"; // @ts-ignore
-
-import bar from \\"@bar/core/bar\\";
-import bar1 from \\"@bar/core/bar1Ex\\";
-import bar2 from \\"@bar/core/bar2\\";
-import // tailing comment
-quxDefault from \\"baz\\";
-import baz from \\"baz/baz/baz/deep/baz/baz\\";
-import baz1 from \\"baz/baz1Ex/baz1Ex/deep/baz1/baz1\\";
-import baz2 from \\"baz/baz2/baz2/deep/baz2/baz2\\";
-import qux from \\"@qux/core/qux\\";
-import qux1 from \\"@qux/core/qux1\\";
-import qux2 from \\"@qux/core/qux2\\"; // @ts-ignore
-
-import * as quxAll from \\"@qux/core\\";
-import quux from \\"quux/dist/default\\";
-import quux1 from \\"quux/dist/quux1Ex\\";
-import quux2 from \\"quux/dist/quux2\\"; // @ts-ignore
-
-import corge from \\"@corge/react/dist/corge/corge/deep/corge/corge\\";
-import corge1 from \\"@corge/react/dist/corge1Ex/corge1Ex/deep/corge1/corge1\\";
-import corge2 from \\"@corge/react/dist/corge2/corge2/deep/corge2/corge2\\"; // @ts-ignore
-
-import grault from \\"grault-vue/dist/grault\\";
-import grault1 from \\"grault-vue/dist/grault1\\";
-import grault2 from \\"grault-vue/dist/grault2\\";
-const str = (\\"str\\" as const);
+import foo from "foo/foo";
+import foo1 from "foo/foo1Ex";
+import foo2 from "foo/foo2"; // @ts-ignore
+import bar from "@bar/core/bar";
+import bar1 from "@bar/core/bar1Ex";
+import bar2 from "@bar/core/bar2";
+import
+// tailing comment
+quxDefault from "baz";
+import baz from "baz/baz/baz/deep/baz/baz";
+import baz1 from "baz/baz1Ex/baz1Ex/deep/baz1/baz1";
+import baz2 from "baz/baz2/baz2/deep/baz2/baz2";
+import qux from "@qux/core/qux";
+import qux1 from "@qux/core/qux1";
+import qux2 from "@qux/core/qux2"; // @ts-ignore
+import * as quxAll from "@qux/core";
+import quux from "quux/dist/default";
+import quux1 from "quux/dist/quux1Ex";
+import quux2 from "quux/dist/quux2"; // @ts-ignore
+import corge from "@corge/react/dist/corge/corge/deep/corge/corge";
+import corge1 from "@corge/react/dist/corge1Ex/corge1Ex/deep/corge1/corge1";
+import corge2 from "@corge/react/dist/corge2/corge2/deep/corge2/corge2"; // @ts-ignore
+import grault from "grault-vue/dist/grault";
+import grault1 from "grault-vue/dist/grault1";
+import grault2 from "grault-vue/dist/grault2";
+const str = "str" as const;
 const component = <div />;
 console.log({
   foo,
