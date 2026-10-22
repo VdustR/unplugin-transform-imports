@@ -76,13 +76,13 @@ importers:
         version: 5.9.3
       unplugin:
         specifier: ^3.3.0
-        version: 3.3.0(esbuild@0.28.2)(rollup@4.63.1)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+        version: 3.3.0(esbuild@0.28.2)(rollup@4.63.1)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
       vite:
-        specifier: ^7.2.2
-        version: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+        specifier: ^7.3.7
+        version: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
       vitest:
         specifier: ^4.1.11
-        version: 4.1.11(@types/node@26.4.1)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+        version: 4.1.11(@types/node@26.4.1)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
 
   packages/core: {}
 
@@ -130,13 +130,13 @@ importers:
         version: 19.2.5(@types/react@19.2.18)
       '@vitejs/plugin-react':
         specifier: ^5.1.1
-        version: 5.2.0(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+        version: 5.2.0(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
       vite:
-        specifier: ^7.2.2
-        version: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+        specifier: ^7.3.7
+        version: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
 
   packages/demo-vite-svelte:
     dependencies:
@@ -148,11 +148,11 @@ importers:
         version: 4.18.1
       phosphor-svelte:
         specifier: ^3.1.0
-        version: 3.1.0(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+        version: 3.1.0(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.1
-        version: 6.2.4(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+        version: 6.2.4(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
       '@tsconfig/svelte':
         specifier: ^5.0.8
         version: 5.0.8
@@ -175,8 +175,8 @@ importers:
         specifier: link:../../dist/core
         version: link:../../dist/core
       vite:
-        specifier: ^7.2.2
-        version: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+        specifier: ^7.3.7
+        version: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
 
   packages/demo-vite-vue:
     dependencies:
@@ -195,7 +195,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^6.0.8
-        version: 6.0.8(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))(vue@3.5.42(typescript@5.9.3))
+        version: 6.0.8(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))(vue@3.5.42(typescript@5.9.3))
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -203,8 +203,8 @@ importers:
         specifier: link:../../dist/core
         version: link:../../dist/core
       vite:
-        specifier: ^7.2.2
-        version: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+        specifier: ^7.3.7
+        version: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
       vue-tsc:
         specifier: ^3.3.11
         version: 3.3.11(typescript@5.9.3)
@@ -1597,8 +1597,8 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  vite@7.3.6:
-    resolution: {integrity: sha512-4XP60spRGjSZFf1qYH+dJIkK2znL3zQfl9KkOV9MkkRR/3Dls0dxaBsQPTloEc5BLXWPL9vsOxopxyKoMmDueg==}
+  vite@7.3.7:
+    resolution: {integrity: sha512-AHEzTORMbi7/7aXp7w7KZ5+DCUdSeLsJz0grY8xHpc9DHdYb0vQu6DqJfm2tOw3gDExNgPgnJTXxM6syYFHaCA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -2218,22 +2218,22 @@ snapshots:
 
   '@sveltejs/load-config@0.2.3': {}
 
-  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13)))(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))':
+  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13)))(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
       obug: 2.1.4
       svelte: 5.57.0
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
 
-  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))':
+  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13)))(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13)))(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.4
       svelte: 5.57.0
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
-      vitefu: 1.1.3(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
+      vitefu: 1.1.3(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
 
   '@tsconfig/node22@22.0.6': {}
 
@@ -2309,7 +2309,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-react@5.2.0(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))':
+  '@vitejs/plugin-react@5.2.0(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/plugin-transform-react-jsx-self': 7.29.7(@babel/core@7.29.7)
@@ -2317,14 +2317,14 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-rc.3
       '@types/babel__core': 7.20.5
       react-refresh: 0.18.0
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@6.0.8(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))(vue@3.5.42(typescript@5.9.3))':
+  '@vitejs/plugin-vue@6.0.8(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))(vue@3.5.42(typescript@5.9.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
       vue: 3.5.42(typescript@5.9.3)
 
   '@vitest/expect@4.1.11':
@@ -2336,13 +2336,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.1
 
-  '@vitest/mocker@4.1.11(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))':
+  '@vitest/mocker@4.1.11(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))':
     dependencies:
       '@vitest/spy': 4.1.11
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
 
   '@vitest/pretty-format@4.1.11':
     dependencies:
@@ -2764,13 +2764,13 @@ snapshots:
     dependencies:
       react: 19.2.8
 
-  phosphor-svelte@3.1.0(svelte@5.57.0)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13)):
+  phosphor-svelte@3.1.0(svelte@5.57.0)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13)):
     dependencies:
       estree-walker: 3.0.3
       magic-string: 0.30.21
       svelte: 5.57.0
     optionalDependencies:
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
 
   phosphor-vue@4.4.1(vue@3.5.42(typescript@5.9.3)):
     dependencies:
@@ -2969,7 +2969,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unplugin@3.3.0(esbuild@0.28.2)(rollup@4.63.1)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13)):
+  unplugin@3.3.0(esbuild@0.28.2)(rollup@4.63.1)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13)):
     dependencies:
       '@jridgewell/remapping': 2.3.5
       picomatch: 4.0.7
@@ -2977,7 +2977,7 @@ snapshots:
     optionalDependencies:
       esbuild: 0.28.2
       rollup: 4.63.1
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
 
   update-browserslist-db@1.3.2(browserslist@4.28.8):
     dependencies:
@@ -2985,7 +2985,7 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13):
+  vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13):
     dependencies:
       esbuild: 0.28.2
       fdir: 6.5.0(picomatch@4.0.7)
@@ -2998,14 +2998,14 @@ snapshots:
       fsevents: 2.3.3
       tsx: 4.23.13
 
-  vitefu@1.1.3(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13)):
+  vitefu@1.1.3(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13)):
     optionalDependencies:
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
 
-  vitest@4.1.11(@types/node@26.4.1)(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13)):
+  vitest@4.1.11(@types/node@26.4.1)(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13)):
     dependencies:
       '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@7.3.6(@types/node@26.4.1)(tsx@4.23.13))
+      '@vitest/mocker': 4.1.11(vite@7.3.7(@types/node@26.4.1)(tsx@4.23.13))
       '@vitest/pretty-format': 4.1.11
       '@vitest/runner': 4.1.11
       '@vitest/snapshot': 4.1.11
@@ -3022,7 +3022,7 @@ snapshots:
       tinyexec: 1.3.0
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.1
-      vite: 7.3.6(@types/node@26.4.1)(tsx@4.23.13)
+      vite: 7.3.7(@types/node@26.4.1)(tsx@4.23.13)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 26.4.1
